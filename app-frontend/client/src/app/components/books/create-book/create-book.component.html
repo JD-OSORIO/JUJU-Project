@@ -1,0 +1,31 @@
+<div class="book-form-container">
+  <h2 class="form-title">Agregar Nuevo Libro</h2>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="book-form">
+
+    <div class="form-group">
+      <label class="form-label">Título del Libro</label>
+      <input type="text" class="form-control" formControlName="title" placeholder="Ingrese el título">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Autor</label>
+      <input type="text" class="form-control" formControlName="author" placeholder="Ingrese el autor">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Año de Publicación</label>
+      <input type="text" class="form-control" formControlName="yearPublished" placeholder="Ej: 2024">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Estado del Libro</label>
+      <select class="form-select" formControlName="bookStatus">
+        <option value="" disabled selected>Seleccione el estado</option>
+        <option [value]="true">Disponible</option>
+        <option [value]="false">Rentado</option>
+      </select>
+    </div>
+    <button type="submit" class="btn-submit">Agregar Libro</button>
+    <button type="button" class="btn btn-secondary" routerLink="/books">Atras</button>
+  </form>
+</div>

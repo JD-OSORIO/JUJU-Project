@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">MiApp</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- <li class="nav-item">
+          <a *ngIf="!authService.isLogged()" class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!authService.isLogged()" class="nav-link" routerLink="/register">Register</a>
+        </li> -->
+        <li class="nav-item">
+          <button *ngIf="authService.isLogged()" class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
