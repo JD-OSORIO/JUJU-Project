@@ -1,15 +1,11 @@
 const router = require('express').Router();
-const AuthController = require('../../controllers/auth_controller')
-const validateLogin = require('../../middlewares/auth_middleware');
+const UserController = require('../../controllers/user_controller')
 const { checkToken } = require('../../middlewares/authorizationToken');
 const roleMiddleware = require('../../middlewares/roleMiddleware')
 
-router.post('/register', AuthController.register);
-router.post('/login', validateLogin, AuthController.login)
-
-router.get('/', checkToken, roleMiddleware('admin'), AuthController.getAllUsers);
-router.get('/:id', checkToken, roleMiddleware('admin'), AuthController.getUserById);
-router.put('/:id', checkToken, roleMiddleware('admin'), AuthController.updateUser);
-router.delete('/:id', checkToken,roleMiddleware('admin'), AuthController.deleteUser);
+router.get('/', checkToken, roleMiddleware('admin'), UserController.getAllUsers);
+router.get('/:id', checkToken, roleMiddleware('admin'), UserController.getUserById);
+router.put('/:id', checkToken, roleMiddleware('admin'), UserController.updateUser);
+router.delete('/:id', checkToken,roleMiddleware('admin'), UserController.deleteUser);
 
 module.exports = router;

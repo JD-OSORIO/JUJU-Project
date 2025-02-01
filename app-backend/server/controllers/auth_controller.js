@@ -30,55 +30,6 @@ class AuthController {
       next(error);
     }
   }
-
-  async updateUser(req, res, next) {
-    try {
-        const { id } = req.params; // Extraigo ID de la URL
-        const updatedUser = await authService.updateUser(id, req.body, req.user); 
-
-        res.json(updatedUser);
-    } catch (error) {
-        next(error);
-    }
-}
-
-async getUserById(req, res, next) {
-  try {
-      const { id } = req.params;
-
-      if (!id) {
-          throw new AppError('ID de usuario requerido', 400);
-      }
-
-      const response = await authService.getUserById(id);
-      res.json(response);
-  } catch (error) {
-      next(error);
-  }
-}
-
-
-  async deleteUser(req, res, next) {
-    try {
-        const { id } = req.params
-    
-        const response = await authService.deleteUser(id);
-        res.json(response);
-    } catch (error) {
-        next(error);
-    }
-  }
-
-  async getAllUsers(req, res, next) {
-    try {
-        const users = await authService.getAllUsers();
-        res.json(users);
-    } catch (error) {
-        next(error);
-    }
-}
-
-
 }
 
 

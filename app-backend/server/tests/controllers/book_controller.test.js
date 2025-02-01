@@ -10,7 +10,7 @@ describe('BookController Tests', () => {
     beforeAll(async () => {
         // Crear usuario de prueba
         await request(app)
-            .post('/api/v1/users/register')
+            .post('/api/v1/auth/register')
             .send({
                 username: 'testuser',
                 email: 'test@example.com',
@@ -20,14 +20,14 @@ describe('BookController Tests', () => {
     
         // Iniciar sesión para obtener el token
         const loginRes = await request(app)
-            .post('/api/v1/users/login')
+            .post('/api/v1/auth/login')
             .send({
                 email: 'test@example.com',
                 password: 'password123'
             })
             .set('Accept', 'application/json');
     
-        console.log('📌 Respuesta del login:', loginRes.body); // Depuro
+        console.log('Respuesta del login:', loginRes.body); // Depuro
     
         userToken = loginRes.body.token;
     
@@ -45,7 +45,7 @@ describe('BookController Tests', () => {
                 yearPublished: 2024
             });
 
-        console.log('📌 Respuesta al crear libro:', res.body);
+        console.log('Respuesta al crear libro:', res.body);
 
         expect(res.statusCode).toBe(201);
         expect(res.body).toHaveProperty('_id');
@@ -61,33 +61,33 @@ describe('BookController Tests', () => {
             .get('/api/v1/books')
             .set('Authorization', `Bearer ${userToken}`);
 
-        console.log('📌 Libros obtenidos:', res.body);
+        console.log('Libros obtenidos:', res.body);
 
         expect(res.statusCode).toBe(200);
         expect(Array.isArray(res.body)).toBe(true);
     });
 
     test('Debe obtener un libro por ID', async () => {
-        console.log('📌 Intentando obtener libro con ID:', bookId);
+        console.log('Intentando obtener libro con ID:', bookId);
 
         const res = await request(app)
             .get(`/api/v1/books/${bookId}`)
             .set('Authorization', `Bearer ${userToken}`);
 
-        console.log('📌 Respuesta al obtener libro:', res.body);
+        console.log('Respuesta al obtener libro:', res.body);
 
         expect(res.statusCode).toBe(200);
         expect(res.body).toHaveProperty('title', 'Libro de prueba');
     });
 
     test('Debe eliminar un libro', async () => {
-        console.log('📌 Intentando eliminar libro con ID:', bookId);
+        console.log('Intentando eliminar libro con ID:', bookId);
 
         const res = await request(app)
             .delete(`/api/v1/books/${bookId}`)
             .set('Authorization', `Bearer ${userToken}`);
 
-        console.log('📌 Respuesta al eliminar libro:', res.body);
+        console.log('Respuesta al eliminar libro:', res.body);
 
         expect(res.statusCode).toBe(200);
     });

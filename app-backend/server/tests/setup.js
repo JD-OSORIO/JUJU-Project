@@ -17,6 +17,8 @@ beforeAll(async () => {
     server = app.listen(0, () => console.log("Servidor de pruebas iniciado"));
 });
 
+
+
 afterAll(async () => {
     await mongoose.connection.close();  
     server.close();  

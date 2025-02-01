@@ -7,5 +7,6 @@ const {checkToken} = require('../middlewares/authorizationToken')
 
 router.use('/books', checkToken, require('./api/books'))
 router.use('/users', require('./api/users'))
+router.use('/auth', require('./api/auth'))
 
 module.exports = router;

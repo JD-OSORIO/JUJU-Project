@@ -9,7 +9,7 @@ export class AuthService {
 
     private tokenKey = 'token_books'
 
-    baseUrl = 'http://localhost:3000/api/v1/users'
+    baseUrl = 'http://localhost:3000/api/v1/auth'
 
   constructor(private http: HttpClient) { }
 
