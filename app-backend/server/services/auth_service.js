@@ -4,6 +4,7 @@ const userRepository = require('../repositories/userRepository');
 const UserFactory = require('../utils/userFactory');
 const AppError = require('../utils/appError');
 const mongoose = require('mongoose');
+const hashPassword = require('../middlewares/hasPassword');
 
 class AuthService {
     async login(email, password) {
@@ -32,7 +33,9 @@ class AuthService {
     }
 
     async updateUser(userId, updateData) {
-
+        if (updateData.password) {
+            updateData.password = await hashPassword(updateData.password);
+        }
     
         const updatedUser = await userRepository.updateById(userId, updateData);
     

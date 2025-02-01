@@ -8,7 +8,7 @@ class Database {
         aunque no es recomendable utilizar ese patron, como es una aplicación no tan escalable
         lo aplico para que sea mas eficiente */
         if (!Database.instance) {
-            mongoose.connect(process.env.MONGO_URI);
+            mongoose.connect(process.env.MONGO_URL);
             this.connection = mongoose.connection;
             /*El manejo de error en esta parte me permite saber si falla algo a la hora
             de entrar a la base de datos */
