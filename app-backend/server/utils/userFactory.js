@@ -3,7 +3,7 @@ class UserFactory {
         return {
             username: data.username,
             email: data.email,
-            password: data.password, // Se debe hashear en AuthService
+            password: data.password, // Aqui tengo en cuento que tengo que hashear en AuthService
             role: data.role || 'regular'
         };
     }

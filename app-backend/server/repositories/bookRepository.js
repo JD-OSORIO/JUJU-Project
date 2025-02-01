@@ -1,5 +1,7 @@
 const Book = require('../models/book_model');
 
+/*Hago las peticiones que me ayuda mongoDB para poder hacerlo mejor */
+
 class BookRepository {
     async findAll(userId) {
         return await Book.find({ owner: userId });
