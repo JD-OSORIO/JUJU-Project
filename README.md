@@ -116,7 +116,20 @@ this.connection = mongoose.connection;
   ```bash
   npm test
   ```
-
+## Cosas a tener en cuenta
+  - Los usuarios con el rol adminstrador tienen acceso a una interfaz diferente a el usuario cotidiano.
+  - Normalmente este rol se debe crear desde el back ya que es un role que permite administrar a los usuarios.
+  - la peticion post esta en la documentacion de la appi en swagger pero aqui dejo una implementacion de esta.
+  - es recomendable que creen un usuario admin antes de iniciar a la aplicación ya que de esta manera permite la gestion de los usuarios de una manera mas facil.
+ `  http://localhost:3000/auth/register`:
+```text
+{
+  "username":"example"
+  "email": "email.example"
+  "password":"password123"
+  "role": "admin"
+}
+```
 
 ## Licencia
 Este proyecto está bajo la licencia MIT. Si tienes alguna pregunta o necesitas más detalles, no dudes en contactar conmigo.
