@@ -59,7 +59,7 @@ export class LoginComponent {
       text: message,
       confirmButtonColor: '#d33'
     }).then(() => {
-      this.formulario.reset(); // Limpia el formulario después de mostrar la alerta
+      this.formulario.reset();
     });
   }
 }

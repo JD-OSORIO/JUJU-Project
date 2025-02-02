@@ -13,10 +13,9 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  color: white; /* Asegura que el texto sea legible */
+  color: white;
 }
 
-/* Fondo con opacidad */
 .book-card::before {
   content: "";
   position: absolute;
@@ -26,11 +25,10 @@
   height: 100%;
   background: url('../../../assets/book.jpg') no-repeat center center;
   background-size: cover;
-  opacity: 0.3; /* Ajusta la opacidad aquí (0.1 - 1) */
+  opacity: 0.3;
   z-index: 0;
 }
 
-/* Asegurar que el contenido esté sobre el fondo */
 .book-card > * {
   position: relative;
   z-index: 1;

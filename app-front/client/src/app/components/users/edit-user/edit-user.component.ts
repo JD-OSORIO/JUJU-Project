@@ -37,7 +37,7 @@ export class EditUserComponent {
   getUserById() {
     this.activatedRoute.params.subscribe(params => {
       this.userService.getById(params['userID']).subscribe(response => {
-        const user = response.user; // Extrae el usuario
+        const user = response.user;
 
         if (!user) {
           console.error('El usuario es null o undefined');
@@ -66,7 +66,7 @@ export class EditUserComponent {
       delete formData.password;
     }
 
-    // Aquí se usa SweetAlert2 para confirmar si realmente desea actualizar
+
     Swal.fire({
       icon: 'warning',
       title: '¿Estás seguro?',
@@ -74,11 +74,10 @@ export class EditUserComponent {
       showCancelButton: true,
       confirmButtonText: 'Sí, actualizar',
       cancelButtonText: 'No, cancelar',
-      confirmButtonColor: '#3085d6',  // Color del botón de confirmación
-      cancelButtonColor: '#d33',     // Color del botón de cancelar
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
     }).then((result) => {
       if (result.isConfirmed) {
-        // Si el usuario confirma, realizamos la actualización
         this.userService.update(this.userId(), formData).subscribe(() => {
           Swal.fire(
             'Actualizado!',
@@ -88,7 +87,6 @@ export class EditUserComponent {
           this.router.navigate(['/admin']);
         });
       } else {
-        // Si el usuario cancela, no hacemos nada
         console.log('Acción cancelada');
       }
     });

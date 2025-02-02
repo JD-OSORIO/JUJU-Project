@@ -15,7 +15,7 @@ export class EditBookComponent {
 
   formulario: FormGroup;
 
-  bookId = signal(''); // ID del libro que se está editando
+  bookId = signal('');
 
   constructor(
     private fb: FormBuilder,
@@ -32,7 +32,7 @@ export class EditBookComponent {
   }
 
   ngOnInit() {
-    this.getBookById(); // Obtener los datos del libro al iniciar
+    this.getBookById();
   }
 
   // Obtener los detalles del libro por su ID
@@ -50,7 +50,6 @@ export class EditBookComponent {
     });
   }
 
-  // Mostrar alerta de confirmación antes de guardar los cambios
   onSubmit() {
     Swal.fire({
       title: '¿Estás seguro?',
@@ -65,7 +64,7 @@ export class EditBookComponent {
       if (result.isConfirmed) {
         this.booksService.update(this.bookId(), this.formulario.value).subscribe(data => {
           this.router.navigate(['/books']);
-          Swal.fire('Guardado!', 'Los cambios han sido guardados correctamente.', 'success'); // Alerta de éxito
+          Swal.fire('Guardado!', 'Los cambios han sido guardados correctamente.', 'success');
         }, error => {
           Swal.fire('Error', 'Hubo un problema al guardar los cambios. Intenta nuevamente.', 'error');
         });

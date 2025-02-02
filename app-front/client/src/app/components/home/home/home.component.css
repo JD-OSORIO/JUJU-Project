@@ -7,10 +7,10 @@
     align-items: center;
     background-size: cover;
     background-position: center;
-  
+
   }
-  
-  /* Capa de opacidad */
+
+
   .home-container::before {
     content: '';
     position: absolute;
@@ -18,31 +18,29 @@
     left: 0;
     right: 0;
     bottom: 0;
-  
+
     z-index: 1;
   }
-  
-  /* Contenido centrado */
+
   .content {
     position: relative;
     z-index: 2;
     text-align: center;
     color: #01A288;
   }
-  
-  /* Estilos para el título */
+
+
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
-  
-  /* Estilos para el párrafo */
+
+
   p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
   }
-  
-  /* Estilos para el botón */
+
   button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -53,13 +51,13 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+
   button:hover {
     background-color: #f0f0f0;
   }
-  
-  
-  /* Estilos para el contenedor principal */
+
+
+
   .home-container {
     position: relative;
     height: 100vh;
@@ -67,8 +65,8 @@
     justify-content: center;
     align-items: center;
   }
-  
-  /* Capa de opacidad */
+
+
   .home-container::before {
     content: '';
     position: absolute;
@@ -76,11 +74,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(1, 162, 136, 0.7); /* Color #01A288 con opacidad */
-    z-index: 1;
+    background-color: rgba(1, 162, 136, 0.7);
   }
-  
-  /* Contenido centrado */
+
+
   .content {
     position: relative;
     z-index: 2;
@@ -89,47 +86,45 @@
     max-width: 800px;
     padding: 20px;
   }
-  
-  /* Estilos para el título */
+
+
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
-  
-  /* Estilos para la descripción */
+
+
   .description {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     line-height: 1.6;
   }
-  
-  /* Estilos para las características */
+
   .features {
     margin-bottom: 2rem;
   }
-  
+
   .features h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-  
+
   .features ul {
     list-style-type: none;
     padding: 0;
   }
-  
+
   .features li {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
   }
-  
-  /* Estilos para los botones */
+
   .actions {
     display: flex;
     justify-content: center;
     gap: 1rem;
   }
-  
+
   button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -140,7 +135,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+
   button:hover {
     background-color: #f0f0f0;
   }

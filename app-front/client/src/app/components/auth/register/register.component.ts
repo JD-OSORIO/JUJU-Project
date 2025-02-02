@@ -33,16 +33,14 @@ export class RegisterComponent {
 
     this.authService.register(this.formulario.value).subscribe(
       user => {
-        // Mostrar el mensaje de éxito sin botón de OK
         Swal.fire({
           icon: 'success',
           title: '¡Registrado exitosamente!',
           text: 'Ahora puedes iniciar sesión con tu cuenta.',
-          showConfirmButton: false, // Ocultar el botón de confirmación
-          timer: 2000, // El mensaje se cierra después de 2 segundos
-          timerProgressBar: true // Mostrar una barra de progreso mientras se espera
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true
         }).then(() => {
-          // Redirigir al login después de mostrar el mensaje
           this.router.navigate(['/login']);
         });
       },
@@ -52,9 +50,9 @@ export class RegisterComponent {
           icon: 'error',
           title: 'Error',
           text: 'Hubo un problema con el registro. Intenta nuevamente.',
-          showConfirmButton: false, // Ocultar el botón de confirmación
-          timer: 2000, // El mensaje se cierra después de 2 segundos
-          timerProgressBar: true // Mostrar una barra de progreso mientras se espera
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true
         });
       }
     );

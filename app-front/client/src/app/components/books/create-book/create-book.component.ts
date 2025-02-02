@@ -30,19 +30,17 @@ export class CreateBookComponent {
   // Método que se llama cuando el formulario se envía
   onSubmit() {
     this.booksService.create(this.formulario.value).subscribe(data => {
-      // Mostrar un mensaje de éxito con SweetAlert2
       Swal.fire({
         icon: 'success',
         title: '¡Libro Creado!',
         text: 'El libro se ha creado exitosamente.',
-        timer: 3000, // El mensaje desaparecerá después de 3 segundos
-        showConfirmButton: false, // No mostrar el botón de "OK"
+        timer: 3000,
+        showConfirmButton: false,
       });
 
-      // Redirigir a la lista de libros después de mostrar el mensaje
       setTimeout(() => {
         this.router.navigate(['/books']);
-      }, 3000); // Asegura que la navegación ocurra después de que desaparezca la alerta
+      }, 3000);
     });
   }
 }

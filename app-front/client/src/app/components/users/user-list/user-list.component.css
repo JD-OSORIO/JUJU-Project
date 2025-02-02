@@ -1,4 +1,4 @@
-/* ---- Estilos de la tarjeta ---- */
+
 .card {
   margin-top: 10%;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -12,7 +12,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ---- Estilos del avatar ---- */
+
 .user-avatar {
   width: 30%;
   height: 120px;
@@ -27,7 +27,7 @@
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* ---- Botones ---- */
+
 
 .btn {
   width: 80%;
@@ -52,14 +52,14 @@
   background-color: #c82333;
 }
 
-/* ---- Insignias ---- */
+
 .badge {
   font-size: 14px;
   padding: 5px 10px;
   border-radius: 8px;
 }
 
-/* ---- Estilos para el modal ---- */
+
 .modal-content {
   border-radius: 10px;
 }
@@ -72,37 +72,3 @@
 .modal-footer {
   border-top: 2px solid #dee2e6;
 }
-
-/* ---- Icono dentro de la tarjeta ---- */
-/* .card-img-top-icon {
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f8f9fa;
-} */
-
-/* .card-img-top-icon i {
-  font-size: 6rem;
-  margin: 10% 0;
-} */
-
-/* ---- Tarjeta especial (Agregar usuario) ---- */
-/* .add-book-card {
-  background-color: #f8f9fa;
-  border: 2px dashed #007bff;
-  color: #007bff;
-  transition: background 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-} */
-
-/* .add-book-card i {
-  font-size: 4rem;
-}
-
-.add-book-card:hover {
-  background-color: #007bff;
-  color: white;
-} */

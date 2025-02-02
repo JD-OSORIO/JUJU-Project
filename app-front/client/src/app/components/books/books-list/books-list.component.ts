@@ -11,7 +11,7 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class BooksListComponent {
   books: any[] = [];
-  searchTerm: string = ''; // Propiedad para el término de búsqueda
+  searchTerm: string = '';
 
   constructor(private booksService: BooksService, public authService: AuthService) {}
 

@@ -18,7 +18,7 @@
   align-items: center;
 }
 .nav-link:hover {
-  color: #17a2b8 !important; /* Color turquesa en hover */
+  color: #17a2b8 !important;
 }
 
 .btn-sm {

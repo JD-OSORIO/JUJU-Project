@@ -13,8 +13,8 @@ import Swal from 'sweetalert2';
 })
 export class DetailsBookComponent {
 
-  book = signal<any>({}); // Libro actual
-  bookst: any[] = []; // Lista de libros (si la usas en el contexto)
+  book = signal<any>({});
+  bookst: any[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
