@@ -62,12 +62,20 @@ export class EditBookComponent {
       cancelButtonColor: '#d33'
     }).then(result => {
       if (result.isConfirmed) {
-        this.booksService.update(this.bookId(), this.formulario.value).subscribe(data => {
-          this.router.navigate(['/books']);
-          Swal.fire('Guardado!', 'Los cambios han sido guardados correctamente.', 'success');
-        }, error => {
-          Swal.fire('Error', 'Hubo un problema al guardar los cambios. Intenta nuevamente.', 'error');
-        });
+        this.booksService.update(this.bookId(), this.formulario.value).subscribe(
+          () => {
+            Swal.fire({
+              title: 'Guardado!',
+              text: 'Los cambios han sido guardados correctamente.',
+              icon: 'success'
+            }).then(() => {
+              this.router.navigate(['/books']); // Redirige después de cerrar la alerta
+            });
+          },
+          () => {
+            Swal.fire('Error', 'Hubo un problema al guardar los cambios. Intenta nuevamente.', 'error');
+          }
+        );
       }
     });
   }

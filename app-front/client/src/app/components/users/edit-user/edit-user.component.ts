@@ -66,7 +66,6 @@ export class EditUserComponent {
       delete formData.password;
     }
 
-
     Swal.fire({
       icon: 'warning',
       title: '¿Estás seguro?',
@@ -79,12 +78,13 @@ export class EditUserComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.userService.update(this.userId(), formData).subscribe(() => {
-          Swal.fire(
-            'Actualizado!',
-            'El usuario ha sido actualizado correctamente.',
-            'success'
-          );
-          this.router.navigate(['/admin']);
+          Swal.fire({
+            title: 'Actualizado!',
+            text: 'El usuario ha sido actualizado correctamente.',
+            icon: 'success'
+          }).then(() => {
+            this.router.navigate(['/admin']); // Redirige después de cerrar la alerta
+          });
         });
       } else {
         console.log('Acción cancelada');

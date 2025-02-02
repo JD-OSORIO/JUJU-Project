@@ -55,8 +55,14 @@ export class DetailsBookComponent {
         this.booksService.delete(bookId).subscribe(() => {
           // Filtra y elimina el libro de la lista (si es necesario)
           this.bookst = this.bookst.filter(book => book._id !== bookId);
-          this.router.navigate(['/books']);
-          Swal.fire('Eliminado!', 'El libro ha sido eliminado.', 'success');
+
+          Swal.fire({
+            title: 'Eliminado!',
+            text: 'El libro ha sido eliminado.',
+            icon: 'success'
+          }).then(() => {
+            this.router.navigate(['/books']); // Redirige después de cerrar la alerta
+          });
         });
       }
     });
