@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card book-card shadow-lg border-0">
+    <div class="card-body text-center">
+      <div  style="border-bottom: solid 1px black;">
+        <h3 class="card-title text-primary fw-bold">{{ book()?.title }}</h3>
+      </div>
+      <h5 class="card-subtitle text-muted mt-3">Autor: {{ book()?.author }}</h5>
+      <h6 class="card-subtitle text-muted">Año de Publicación: {{ book()?.yearPublished }}</h6>
+
+      <div class="status mt-3">
+        <strong class="text-dark">Estado del Libro:</strong>
+        <span [ngClass]="book()?.bookStatus ? 'badge bg-success' : 'badge bg-danger'">
+          {{ book()?.bookStatus ? 'Disponible' : 'Rentado' }}
+        </span>
+      </div>
+
+      <div class="button-group mt-4">
+        <a class="btn btn-secondary" routerLink="/books">
+          <i class="bi bi-arrow-left"></i> Volver a la lista
+        </a>
+
+        <a *ngIf="authService.isOwner(book()?.userId)"
+           class="btn btn-warning"
+           [routerLink]="['/books/edit', book()?._id]">
+          <i class="bi bi-pencil"></i> Editar
+        </a>
+
+        <button *ngIf="authService.isOwner(book()?.userId)"
+                class="btn btn-danger"
+                (click)="onClickBorrar(book()?._id)">
+          <i class="bi bi-trash"></i> Borrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

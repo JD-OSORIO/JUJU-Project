@@ -1,0 +1,141 @@
+/* Estilos para el contenedor principal */
+.home-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+
+  }
+
+
+  .home-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #01A288;
+  }
+
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #01A288;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #f0f0f0;
+  }
+
+
+
+  .home-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .home-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 162, 136, 0.7);
+  }
+
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+  }
+
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .features {
+    margin-bottom: 2rem;
+  }
+
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .features ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .features li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #01A288;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #f0f0f0;
+  }

@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Mi App</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Botón de ADMIN (si el usuario es admin) -->
+        <li class="nav-item" *ngIf="authService.isLogged() && authService.getUserRole() === 'admin'">
+          <a class="nav-link" routerLink="/admin">Administración</a>
+        </li>
+
+        <!-- Botón de LIBROS (si el usuario es regular) -->
+        <li class="nav-item" *ngIf="authService.isLogged() && authService.getUserRole() === 'regular'">
+          <a class="nav-link" routerLink="/books">Libros</a>
+        </li>
+
+        <!-- Botón de LOGOUT si está autenticado -->
+         <div style="display: flex;justify-content: center;align-items: center;">
+          <li class="nav-item" *ngIf="authService.isLogged()">
+            <button *ngIf="authService.isLogged()" class="btn text-white"  style="display: flex; justify-content: center; align-items: center; color: white;" (click)="logout()"><i class="bi bi-indent" style="font-size: 25px;"></i> Logout</button>
+          </li>
+          <i class="fa-solid fa-circle-user" style="color: white; font-size: 25px;" *ngIf="authService.isLogged()"></i>
+         </div>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+

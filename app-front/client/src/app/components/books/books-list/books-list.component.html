@@ -1,0 +1,40 @@
+<div class="row mt-5">
+  <<!-- Campo de búsqueda -->
+  <div class="mb-4 col-10 offset-1">
+    <input type="text" [(ngModel)]="searchTerm" class="form-control focus" style="border-style: none;
+  outline: none;" placeholder="Busqueda por título o autor" />
+  </div>
+  <div class="col-10 col-lg-4 offset-1 offset-lg-0 mb-4"  style="padding: 2%;"  *ngFor="let book of filteredBooks">
+    <div class="card">
+      <div class="flip-card"  style="padding: 4%;">
+        <div style="display: flex;justify-content: center;padding: 9%;">
+          <i class="fa-solid fa-book fa-4x  mb-3" style="color: #01A288;"></i>
+        </div>
+        <div class="flip-card-inner" style="border-top: 1px black solid;">
+          <!-- Frente de la tarjeta -->
+          <div class="flip-card-front d-flex flex-column align-items-center p-3">
+            <h5 class="fw-bold">TITULO: {{ book.title }}</h5>
+            <h6 class="text-muted">AUTHOR: {{ book.author }}</h6>
+          </div>
+          <!-- Reverso de la tarjeta -->
+          <div class="flip-card-back d-flex flex-column p-3">
+            <p>{{ book.description }}</p>
+            <a class="btn btn-info mt-auto w-100" [routerLink]="['/books', book._id]" style="background-color: #40b342;">
+              <i class="bi bi-eye"></i> Ver detalles
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta para añadir un libro -->
+  <div class="col-10 col-lg-4 offset-1 offset-lg-0 mb-4"  style="padding: 2%; opacity: 0.8; display: flex;justify-content: center;align-items: center;">
+    <div style="width: 70%; padding: 30px;">
+      <a class="card add-book-card d-flex align-items-center justify-content-center" style="padding: 6%;" routerLink="/books/new">
+        <i class="fa-solid fa-plus fa-3x text-muted"></i>
+      </a>
+    </div>
+    </div>
+    
+</div>
