@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="mb-4 col-10 offset-1 mt-4">
+    <input type="text" [(ngModel)]="searchTerm" class="form-control focus" style="border-style: none;
+  outline: none;" placeholder="Busqueda por título o autor" />
+  </div>
+  <div class="col-md-4" *ngFor="let user of filteredUsers" style="padding: 2%;">
+    <div class="card h-100 shadow-lg border-0 rounded-lg">
+      
+      <!-- Contenedor del avatar -->
+      <div class="text-center mt-3">
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+
+      <div class="card-body text-center" style="display: flex; flex-direction: column;justify-content: center;padding-top: 0; border-bottom:solid 1px black;">
+        <h5 class="card-title text-primary fw-bold"><b class="text-dark">User:</b> {{ user.username }}</h5>
+        <p class="card-subtitle text-muted"><b>Role:</b> {{ user.role }}</p>
+      </div>
+      <div class="row" style="border-top: lightgrey 2px solid; display: flex; justify-content: space-evenly; ">
+        <div class="col-6" style="padding: 5%; text-align: center;">
+        <a class="btn" [routerLink]="['edit', user._id]" style="background-color: #01A288;">
+          <i class="bi bi-pencil"></i> Editar
+        </a>
+      </div>
+      <div class="col-6" style="padding: 5%;">
+        <button class="btn btn-danger" (click)="onClickBorrar(user._id)">
+          <i class="bi bi-trash"></i> Borrar
+        </button>
+      </div>
+      </div>
+
+    </div>
+  </div>
+</div>

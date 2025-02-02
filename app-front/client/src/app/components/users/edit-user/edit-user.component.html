@@ -1,0 +1,32 @@
+<div class="book-form-container">
+  <h2 class="form-title">Editar un Usuario</h2>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="book-form">
+
+    <div class="form-group">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-control" formControlName="username"  style="border-bottom: solid 1px black;">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <p style="border-bottom: solid 1px black;">{{email()}}</p>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password" style="border-bottom: solid 1px black;">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Role</label>
+      <select class="form-select" formControlName="role" style="border-bottom: solid 1px black;">
+        <option value="" disabled selected>Seleccione el rol</option>
+        <option value="admin">Administrador</option>
+        <option value="regular">Usuario</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn-submit" style="background-color: #01A288;">Editar Usuario</button>
+    <button type="button" class="btn btn-secondary" routerLink="/admin" style="background-color: #01A288;">Atras</button>
+  </form>
+</div>
