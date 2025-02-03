@@ -126,7 +126,7 @@ this.connection = mongoose.connection;
 ```text
 {
   "username":"example"
-  "email": "email.example"
+  "email": "email@example.com"
   "password":"password123"
   "role": "admin"
 }
